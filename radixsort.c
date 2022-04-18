@@ -67,7 +67,7 @@ int main(void)
     radixsort(list, num);
     finish = clock();  //시간 측정 끝
 
-    printf("\n----------Heap sort result----------\n ");
+    printf("\n----------radix sort result----------\n ");
     for (i = 0; i < num; i++)
     {
         printf(" %4d ", list[i]);

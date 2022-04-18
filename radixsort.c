@@ -14,23 +14,25 @@ int newlist[MAX_SIZE];
 void radixsort(int list[], int num) {
     int max = list[0];
     int i, j;
-    int count = 0;
+    int k;
+    int digit = 0;
     int temp;
 
     for (i = 1; i < num; i++) {
         if (list[i] > max)
             max = list[i];   //가장 큰 숫자를 찾는다.
-    }
+    }printf("max: % d\n",max);
 
     while (max != 0)
     {
         max = max / 10;
-        ++count;
+        ++digit;
     } //max값의 자릿수를 구한다.
+    printf("digit of max:%d\n", digit);
 
-    for (i = 0; i < count; i++) {
+    for (k = 1; k <= digit; i++) {
 
-        newlist[i] = (list[i] / 10 ^ (count - 1)) % 10;  //자릿수의 값 구하기
+        newlist[i] = (list[i] / 10 ^ (digit - 1)) % 10;  //자릿수의 값 구하기
 
         for (i = 0; i < (num - 1); i++)
         {
